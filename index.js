@@ -29,6 +29,7 @@ const sim = document.getElementById("opcyes")
 const nao = document.getElementById("opcNo")
 
 if (sim && nao) {
+    const area = document.getElementById("area")
     const resp = document.getElementById("textinho")
     const imagem = document.getElementById("imagem")
     let estadoAnterior = -1
@@ -36,6 +37,14 @@ if (sim && nao) {
     nao.addEventListener("mouseenter", entrar)
 
     function entrar() {
+        // calcula o quanto o botão pode se mover sem sair da caixa,
+        // usando o tamanho real da tela (funciona no mobile também)
+        const areaRect = area.getBoundingClientRect()
+        const naoRect = nao.getBoundingClientRect()
+        const margem = 8
+        const maxX = Math.max((areaRect.width - naoRect.width) / 2 - margem, 20)
+        const maxY = Math.max((areaRect.height - naoRect.height) / 2 - margem, 20)
+
         let min = 0
         let max = 7
         let estado
@@ -46,32 +55,21 @@ if (sim && nao) {
 
         estadoAnterior = estado
 
-        sim.style.transform = "translate(+70px)"
+        sim.style.transform = `translate(${maxX * 0.6}px)`
 
-        if (estado == 0) {
-            nao.style.transform = "translate(100px, -60px)"
-        }
-        if (estado == 1) {
-            nao.style.transform = "translate(100px, +60px)"
-        }
-        if (estado == 2) {
-            nao.style.transform = "translate(-210px, +60px)"
-        }
-        if (estado == 3) {
-            nao.style.transform = "translate(-210px, -60px)"
-        }
-        if (estado == 4) {
-            nao.style.transform = "translate(+110px, +60px)"
-        }
-        if (estado == 5) {
-            nao.style.transform = "translate(+110px, -60px)"
-        }
-        if (estado == 6) {
-            nao.style.transform = "translate(-210px, +60px)"
-        }
-        if (estado == 7) {
-            nao.style.transform = "translate(-210px, -60px)"
-        }
+        const posicoes = [
+            [maxX, -maxY],
+            [maxX, maxY],
+            [-maxX, maxY],
+            [-maxX, -maxY],
+            [maxX * 0.5, maxY],
+            [maxX * 0.5, -maxY],
+            [-maxX * 0.5, maxY],
+            [-maxX * 0.5, -maxY],
+        ]
+
+        const [x, y] = posicoes[estado]
+        nao.style.transform = `translate(${x}px, ${y}px)`
     }
 
     sim.addEventListener("click", clicar)
