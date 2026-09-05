@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #2b1055, #7597de 45%, #ff9ecb 100%);
+    background-attachment: fixed;
+    font-family: 'DynaPuff', cursive;
+    color: white;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, .45);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ---------- floating hearts background ---------- */
+#heartsBg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -10%;
+    font-size: 22px;
+    opacity: .55;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: .6;
+    }
+    90% {
+        opacity: .6;
+    }
+    to {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- layout ---------- */
+main, section, header, footer {
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 7vw, 56px);
+    margin: 0 0 8px;
+}
+
+.subtitle {
+    font-size: 18px;
+    opacity: .9;
+    max-width: 480px;
+}
+
+section {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: clamp(22px, 5vw, 30px);
+    margin-bottom: 18px;
+}
+
+/* ---------- counter ---------- */
+.counter-card {
+    background: rgba(255, 255, 255, .12);
+    border: 2px solid rgba(255, 255, 255, .35);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(4px);
+    box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .35);
+}
+
+#days {
+    font-size: clamp(48px, 12vw, 72px);
+    display: block;
+    color: #ffe3f1;
+}
+
+.counter-card p {
+    margin: 6px 0 0;
+    font-size: 16px;
+}
+
+/* ---------- dodge game ---------- */
+#area {
+    background-color: seagreen;
+    max-width: 550px;
+    height: 260px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 15px;
+    box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .5);
+    position: relative;
+    overflow: hidden;
+}
+
+.option {
+    background-color: yellowgreen;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    font-size: 32px;
+    border-radius: 15px;
+    transition: transform .35s ease;
+    box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .5);
+    cursor: pointer;
+    user-select: none;
+}
+
+#opcNo:hover {
+    color: red;
+}
+
+#opcyes:hover {
+    color: blue;
+}
+
+#link a {
+    color: #ffe066;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#textinho {
+    color: #ff5c8a;
+    font-size: clamp(20px, 5vw, 30px);
+    margin-top: 18px;
+    min-height: 36px;
+    transition: opacity .5s;
+}
+
+#imagem img {
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .5);
+}
+
+/* ---------- reasons / flip cards ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.card {
+    perspective: 1000px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 14px;
+    backface-visibility: hidden;
+    box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .4);
+    font-size: 15px;
+}
+
+.card-front {
+    background: rgba(255, 255, 255, .15);
+    border: 2px dashed rgba(255, 255, 255, .5);
+}
+
+.card-back {
+    background: #ff5c8a;
+    transform: rotateY(180deg);
+}
+
+/* ---------- jokes ---------- */
+#jokeBtn {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 30px;
+    background: #ffe066;
+    color: #2b1055;
+    text-shadow: none;
+    cursor: pointer;
+    box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .4);
+    transition: transform .2s;
+}
+
+#jokeBtn:active {
+    transform: scale(.95);
+}
+
+#jokeText {
+    margin-top: 16px;
+    min-height: 30px;
+    font-size: 17px;
+}
+
+/* ---------- footer ---------- */
+footer {
+    text-align: center;
+    padding: 35px 20px 50px;
+    font-size: 16px;
+    opacity: .9;
+}
