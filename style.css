@@ -57,9 +57,38 @@ body {
 }
 
 /* ---------- layout ---------- */
-main, section, header, footer {
+main, section, header, footer, nav {
     position: relative;
     z-index: 1;
+}
+
+/* ---------- navegação ---------- */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 12px 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .12);
+    border: 2px solid rgba(255, 255, 255, .3);
+    transition: background .3s;
+}
+
+.nav a:hover {
+    background: rgba(255, 255, 255, .25);
+}
+
+.nav a.active {
+    background: #ff5c8a;
+    border-color: #ff5c8a;
 }
 
 .hero {
@@ -158,13 +187,6 @@ h2 {
 
 #opcyes:hover {
     color: blue;
-}
-
-#link a {
-    color: #ffe066;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
 }
 
 #textinho {
