@@ -4,109 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para minha linda</title>
+    <title>Para a Milly</title>
     <link rel="icon" type="image/x-icon" href="./imagem.png">
-
-    <script src="./index.js" type="text/javascript" defer=""></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
-        html, body{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            height: 100vh;
-            background-color: #363636;
-            font-family:'DynaPuff', cursive;
-            color: white;
-            text-shadow: 1px 2px 2px black;
-        }
-        header{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 125px;
-        }
-        h1{
-            font-size: 50px;
-        }
-        #conteiner{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #area{
-            background-color: seagreen;
-            width: 550px;
-            height: 390px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            border-radius: 15px;
-            box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .5);
-        }
-        #opcNo:hover{
-            color: red;
-        }
-        #opcyes:hover{
-            color: blue;
-        }
-        .option{
-            background-color: yellowgreen;
-            height: 90px;
-            width: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 50px;
-            font-size: 35px;
-            border-radius: 15px;
-            transition: all .5s;
-            box-shadow: 1px 3px 3px 2px rgba(1, 1, 1, .5);
-            cursor: pointer;
-        }
-        footer{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: red;
-            font-size: 50px;
-            margin-top: 45px;
-            transition: all .5s;
-        }
-        a:link, a:visited {
-            color: yellow;
-            text-decoration: none;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" type="text/javascript" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Eu te amo?</h1>
+    <div id="heartsBg"></div>
+
+    <header class="hero">
+        <h1>Para a Milly 💕</h1>
+        <p class="subtitle">Um sitezinho bobo (mas com amor de verdade) só pra você</p>
     </header>
-    <main id="conteiner">
-            <div class="option" id="opcyes">
-                sim
-            </div>
-            <div class="option" id="opcNo">
-                não
-            </div>
-    </main>
 
-    <div id="link" style="text-align: center;">
+    <section class="counter">
+        <div class="counter-card">
+            <span id="days">0</span>
+            <p>dias namorando comigo (e aguentando minhas piadas ruins)</p>
+        </div>
+    </section>
 
-    </div>
-    
-    <footer id="textinho">
-        
+    <section class="game">
+        <h2>Pergunta séria:</h2>
+        <div id="area">
+            <div class="option" id="opcyes">sim</div>
+            <div class="option" id="opcNo">não</div>
+        </div>
+        <div id="link"></div>
+        <p id="textinho"></p>
+        <span id="imagem"></span>
+    </section>
+
+    <section class="reasons">
+        <h2>Motivos (cientificamente comprovados) para eu te amar</h2>
+        <div class="cards" id="cards">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">Motivo #1</div>
+                    <div class="card-back">Você ri das minhas piadas ruins (ou finge muito bem, e eu agradeço)</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">Motivo #2</div>
+                    <div class="card-back">Seu abraço resolve mais problema que qualquer terapia</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">Motivo #3</div>
+                    <div class="card-back">Você é a única pessoa que eu deixo escolher o filme (mesmo torcendo pra ser outro)</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">Motivo #4</div>
+                    <div class="card-back">Comigo você não precisa fingir que gosta das minhas comidas estranhas</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">Motivo #5</div>
+                    <div class="card-back">Você faz eu querer ser uma pessoa melhor (e menos preguiçosa, mas isso ainda tá em progresso)</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">Motivo #6</div>
+                    <div class="card-back">Simples assim: é você. Sempre foi, sempre vai ser.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jokes">
+        <h2>Prova de que você me aguenta</h2>
+        <button id="jokeBtn">Clica pra uma piada ruim</button>
+        <p id="jokeText"></p>
+    </section>
+
+    <footer>
+        <p>Feito com 💗, café e um pouquinho de JavaScript quebrado</p>
     </footer>
-    <span id="imagem" style="display: flex;justify-content: center;">
-
-    </span>
 </body>
 </html>
