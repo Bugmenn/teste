@@ -35,6 +35,16 @@ if (sim && nao) {
     let estadoAnterior = -1
 
     nao.addEventListener("mouseenter", entrar)
+    // no celular não existe "hover" de verdade, então o toque também precisa
+    // fazer o botão fugir antes que o toque vire um clique
+    nao.addEventListener(
+        "touchstart",
+        (evento) => {
+            evento.preventDefault()
+            entrar()
+        },
+        { passive: false }
+    )
 
     function entrar() {
         // calcula o quanto o botão pode se mover sem sair da caixa,
