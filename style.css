@@ -114,19 +114,24 @@ section {
 .person {
     position: absolute;
     bottom: 22%;
-    font-size: 54px;
-    line-height: 1;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.1;
+    text-shadow: none;
+    white-space: pre;
     animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    transform: translateY(50%);
 }
 
 .p1 {
+    color: #9be8ff;
     animation-name: andarEle;
 }
 
 .p2 {
+    color: #ffb3d1;
     animation-name: andarEla;
 }
 
@@ -152,19 +157,25 @@ section {
     position: absolute;
     bottom: 22%;
     left: 50%;
-    font-size: 40px;
-    transform: translate(-50%, 50%) scale(0);
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    line-height: 1;
+    color: #ff5c8a;
+    text-shadow: none;
+    white-space: pre;
+    transform: translate(-50%, 20%) scale(0);
     opacity: 0;
     animation: coracaoPop 8s ease-in-out infinite;
 }
 
 @keyframes coracaoPop {
-    0%, 36% { opacity: 0; transform: translate(-50%, 50%) scale(0); }
-    42% { opacity: 1; transform: translate(-50%, -60%) scale(1.3); }
-    50% { transform: translate(-50%, -60%) scale(1); }
-    70% { opacity: 1; transform: translate(-50%, -60%) scale(1); }
-    80% { opacity: 0; transform: translate(-50%, -60%) scale(.6); }
-    100% { opacity: 0; transform: translate(-50%, 50%) scale(0); }
+    0%, 36% { opacity: 0; transform: translate(-50%, 20%) scale(0); }
+    42% { opacity: 1; transform: translate(-50%, -180%) scale(1.3); }
+    50% { transform: translate(-50%, -180%) scale(1); }
+    70% { opacity: 1; transform: translate(-50%, -180%) scale(1); }
+    80% { opacity: 0; transform: translate(-50%, -180%) scale(.6); }
+    100% { opacity: 0; transform: translate(-50%, 20%) scale(0); }
 }
 
 .caption {

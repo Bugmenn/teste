@@ -23,3 +23,28 @@ if (days) {
     const dias = Math.floor((new Date() - inicioNamoro) / (1000 * 60 * 60 * 24))
     days.textContent = dias
 }
+
+// ---------- bonequinhos de ascii andando ----------
+const asciiEle = document.getElementById("asciiEle")
+const asciiEla = document.getElementById("asciiEla")
+
+if (asciiEle && asciiEla) {
+    const framesEle = [
+        " o \n/|\\\n/ \\",
+        " o \n/|\\\n | \\",
+    ]
+    const framesEla = [
+        " o \n/|\\\n/ \\",
+        " o \n/|\\\n \\ |",
+    ]
+
+    let frame = 0
+    setInterval(() => {
+        frame = (frame + 1) % 2
+        asciiEle.textContent = framesEle[frame]
+        asciiEla.textContent = framesEla[frame]
+    }, 300)
+
+    asciiEle.textContent = framesEle[0]
+    asciiEla.textContent = framesEla[0]
+}
