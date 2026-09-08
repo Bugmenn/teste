@@ -96,7 +96,7 @@ section {
 
 .stage {
     position: relative;
-    height: 180px;
+    height: 220px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -160,24 +160,24 @@ section {
     left: 50%;
     margin: 0;
     font-family: 'Courier New', monospace;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1;
     letter-spacing: -1px;
     color: #ff5c8a;
     text-shadow: none;
     white-space: pre;
-    transform: translate(-50%, 0) scale(0);
+    transform: translateX(-50%) scale(0);
     opacity: 0;
     animation: coracaoPop 8s ease-in-out infinite;
 }
 
 @keyframes coracaoPop {
-    0%, 36% { opacity: 0; transform: translate(-50%, 0) scale(0); }
-    42% { opacity: 1; transform: translate(-50%, -100%) scale(1); }
-    50% { transform: translate(-50%, -100%) scale(1); }
-    70% { opacity: 1; transform: translate(-50%, -100%) scale(1); }
-    80% { opacity: 0; transform: translate(-50%, -100%) scale(.6); }
-    100% { opacity: 0; transform: translate(-50%, 0) scale(0); }
+    0%, 36% { bottom: 22%; opacity: 0; transform: translateX(-50%) scale(0); }
+    42% { bottom: 52%; opacity: 1; transform: translateX(-50%) scale(1); }
+    50% { bottom: 52%; transform: translateX(-50%) scale(1); }
+    70% { bottom: 52%; opacity: 1; transform: translateX(-50%) scale(1); }
+    80% { bottom: 52%; opacity: 0; transform: translateX(-50%) scale(.6); }
+    100% { bottom: 22%; opacity: 0; transform: translateX(-50%) scale(0); }
 }
 
 .caption {
