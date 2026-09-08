@@ -166,6 +166,7 @@ section {
     color: #ff5c8a;
     text-shadow: none;
     white-space: pre;
+    text-align: center;
     transform: translateX(-50%) scale(0);
     opacity: 0;
     animation: coracaoPop 8s ease-in-out infinite;
